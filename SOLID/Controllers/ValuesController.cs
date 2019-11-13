@@ -14,6 +14,8 @@ namespace SOLID.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            //aaaa
+            //
             return new string[] { "value1", "value2" };
         }
 
