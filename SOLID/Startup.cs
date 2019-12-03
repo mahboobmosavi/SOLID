@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SOLID.Interfaces;
 using SOLID.Repositories;
+using SOLID.Tools;
 
 namespace SOLID
 {
@@ -30,6 +31,7 @@ namespace SOLID
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IDailyPlanning, RpoDailyPlanning>();
+            services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +49,7 @@ namespace SOLID
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwaggerDocumentation();
         }
     }
 }
